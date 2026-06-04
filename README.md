@@ -39,28 +39,40 @@ Say "share to GitHub" and this skill handles everything:
 
 ## 🚀 Quick Start
 
-> **What you need:** `git` installed on your computer. If `git --version` works in terminal, you're ready.
+The skill needs two things: `SKILL.md` + `references/` (4 template files). That's it.
 
 **Step 1 — Open terminal**
 - **macOS / Linux:** Open Terminal
 - **Windows:** Press `Win + R`, type `powershell`, press Enter
 
-**Step 2 — Copy and run this command** (it doesn't matter which folder you're in):
+**Step 2 — Download the files**
 
+macOS / Linux:
 ```bash
-git clone https://github.com/20kiki/github-format-standards.git ~/.claude/skills/github-format-standards
+mkdir -p ~/.claude/skills/github-format-standards/references
+curl -o ~/.claude/skills/github-format-standards/SKILL.md https://raw.githubusercontent.com/20kiki/github-format-standards/master/SKILL.md
+for f in readme-template issue-template pr-template contributing-template; do
+  curl -o ~/.claude/skills/github-format-standards/references/$f.md https://raw.githubusercontent.com/20kiki/github-format-standards/master/references/$f.md
+done
 ```
 
-**Step 3 — Done.** The skill is installed. In Claude Code, say `/GitHub格式规范` or "Share this to GitHub" to trigger it.
+Windows (PowerShell):
+```powershell
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.claude\skills\github-format-standards\references"
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/20kiki/github-format-standards/master/SKILL.md" -OutFile "$env:USERPROFILE\.claude\skills\github-format-standards\SKILL.md"
+@("readme-template","issue-template","pr-template","contributing-template") | ForEach-Object {
+  Invoke-WebRequest -Uri "https://raw.githubusercontent.com/20kiki/github-format-standards/master/references/$_.md" -OutFile "$env:USERPROFILE\.claude\skills\github-format-standards\references\$_.md"
+}
+```
 
-> This command downloads the project into Claude Code's skills folder. Run `git pull` in that folder anytime to update.
+**Step 3 — Done.** In Claude Code, say `/GitHub格式规范` or "Share this to GitHub" to trigger it.
+
+> To update later: re-run the same commands.
 
 ## Installation
 
-```bash
-git clone https://github.com/20kiki/github-format-standards.git \
-  ~/.claude/skills/github-format-standards
-```
+### Claude Code
+Drop `SKILL.md` + `references/` into `~/.claude/skills/github-format-standards/`. See [Quick Start](#-quick-start) for the one-liner.
 
 ## Usage
 

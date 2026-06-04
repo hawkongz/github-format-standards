@@ -39,28 +39,40 @@
 
 ## 🚀 快速开始
 
-> **前置条件：** 电脑上已安装 `git`。在终端输入 `git --version` 能正常输出版本号即可。
+这个 skill 只需要两样东西：`SKILL.md` + `references/`（4 个模板文件）。
 
 **第一步 — 打开终端**
 - **macOS / Linux：** 打开终端（Terminal）
 - **Windows：** 按 `Win + R`，输入 `powershell`，回车
 
-**第二步 — 复制下面这条命令，粘贴到终端里回车**（在哪个目录下执行都可以）：
+**第二步 — 下载文件**
 
+macOS / Linux：
 ```bash
-git clone https://github.com/20kiki/github-format-standards.git ~/.claude/skills/github-format-standards
+mkdir -p ~/.claude/skills/github-format-standards/references
+curl -o ~/.claude/skills/github-format-standards/SKILL.md https://raw.githubusercontent.com/20kiki/github-format-standards/master/SKILL.md
+for f in readme-template issue-template pr-template contributing-template; do
+  curl -o ~/.claude/skills/github-format-standards/references/$f.md https://raw.githubusercontent.com/20kiki/github-format-standards/master/references/$f.md
+done
 ```
 
-**第三步 — 完成。** skill 已安装。在 Claude Code 中说「/GitHub格式规范」或「把这个分享到 GitHub」即可触发。
+Windows（PowerShell）：
+```powershell
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.claude\skills\github-format-standards\references"
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/20kiki/github-format-standards/master/SKILL.md" -OutFile "$env:USERPROFILE\.claude\skills\github-format-standards\SKILL.md"
+@("readme-template","issue-template","pr-template","contributing-template") | ForEach-Object {
+  Invoke-WebRequest -Uri "https://raw.githubusercontent.com/20kiki/github-format-standards/master/references/$_.md" -OutFile "$env:USERPROFILE\.claude\skills\github-format-standards\references\$_.md"
+}
+```
 
-> 这条命令会把项目文件下载到 Claude Code 的 skills 文件夹。以后想更新，在 skills 文件夹下执行 `git pull` 即可。
+**第三步 — 完成。** 在 Claude Code 中说「/GitHub格式规范」或「把这个分享到 GitHub」即可触发。
+
+> 以后想更新：重新执行同样的命令，覆盖旧文件即可。
 
 ## 安装
 
-```bash
-git clone https://github.com/20kiki/github-format-standards.git \
-  ~/.claude/skills/github-format-standards
-```
+### Claude Code
+把 `SKILL.md` + `references/` 放到 `~/.claude/skills/github-format-standards/` 下即可。详见[快速开始](#-快速开始)。
 
 ## 使用
 
