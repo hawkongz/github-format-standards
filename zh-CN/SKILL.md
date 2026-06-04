@@ -1,6 +1,6 @@
 ---
 name: github-format-standards
-description: "当用户想把项目分享到 GitHub 时使用。执行完整流水线：根目录审查、文件命名与目录结构、文档修复（标题层级、代码块语言标注、表格对齐、命令显式解释器）、生成缺失文件（LICENSE .gitignore CONTRIBUTING.md Issue/PR 模板）、README 重写（居中标题 目录）、双语设置、git init、约定式提交、gh repo create、push、语义化标签。触发词：分享到 GitHub、/GitHub格式规范。"
+description: "当用户想把项目分享到 GitHub 时使用。执行完整流水线：根目录审查、文件命名与目录结构、文档修复（标题层级、代码块语言标注、表格对齐、命令显式解释器）、生成缺失文件（LICENSE .gitignore CONTRIBUTING.md Issue/PR 模板）、README 重写（居中标题 目录）、双语设置、git init、约定式提交、gh repo create、push、设置仓库 About（描述 话题标签）、语义化标签。触发词：分享到 GitHub、/GitHub格式规范。"
 ---
 
 # GitHub 格式规范
@@ -164,8 +164,14 @@ docs: 添加 CONTRIBUTING.md
 
 4. 如果远程仓库不存在，`gh repo create` 创建（公开，描述用 README 的 tagline）
 5. `git push`
-6. 如果是发布版：打语义化版本标签 `git tag v1.0.0`，推送标签
-7. 输出最终 GitHub URL
+6. **设置仓库 About（描述 + 话题标签）**——GitHub 右侧栏元数据。用 `gh repo edit`：
+   ```bash
+   gh repo edit owner/repo --description "README tagline 一句话概述"
+   gh repo edit owner/repo --add-topic "topic1" --add-topic "topic2" ...
+   ```
+   话题标签与 README 的 `## 话题标签` 章节保持一致，5-8 个，覆盖语言、平台和领域。
+7. 如果是发布版：打语义化版本标签 `git tag v1.0.0`，推送标签
+8. 输出最终 GitHub URL
 
 如果用户只想本地预览，到阶段六结束，输出改动摘要。
 
@@ -183,7 +189,7 @@ docs: 添加 CONTRIBUTING.md
 | 文件生成 | 5 个 | LICENSE、.gitignore、CONTRIBUTING.md、Issue/PR 模板 |
 | README | 重写 | 居中标题、目录、8 个章节 |
 | 双语 | 已创建 | zh-CN/README.md + zh-CN/SKILL.md |
-| 发布 | 已推送 | https://github.com/... |
+| 发布 | 已推送 + About 已设置 | https://github.com/... |
 
 ---
 

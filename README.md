@@ -35,7 +35,7 @@ Say "share to GitHub" and this skill handles everything:
 | 4. Generate | Creates `LICENSE`, `CONTRIBUTING.md`, `SECURITY.md`, Issue/PR templates |
 | 5. README | Rewrites README with centered title, TOC, and top-project structure |
 | 6. Bilingual | Sets up `zh-CN/` with full Chinese translation if needed |
-| 7. Ship | `git init` → conventional commit → `gh repo create` → push → semantic tag |
+| 7. Ship | `git init` → conventional commit → `gh repo create` → push → set About (desc + topics) → tag |
 
 ## 🚀 Quick Start
 
@@ -99,7 +99,7 @@ Centered title + badges, auto-generated TOC from `##` headings. Structure: Featu
 Root: English, `zh-CN/`: Chinese. Both have `**Language:**` row linking to each other. Natural translation, not machine style.
 
 ### 7. Ship
-`git init` → `git add` → commit with conventional format (`feat:`, `fix:`, `docs:`) → `gh repo create` → `git push` → semantic version tag (`v1.0.0`) if releasing.
+`git init` → `git add` → commit with conventional format (`feat:`, `fix:`, `docs:`) → `gh repo create` → `git push` → set repo About (description + topics via `gh repo edit`) → semantic version tag (`v1.0.0`) if releasing.
 
 ## File Structure
 

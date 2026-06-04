@@ -1,6 +1,6 @@
 ---
 name: github-format-standards
-description: "Use when the user wants to share a project to GitHub. Runs a full pipeline: root audit, file naming and structure, document fixes (headings, code-block language tags, table alignment, explicit command interpreters), generate missing files (LICENSE, .gitignore, CONTRIBUTING.md, Issue/PR templates), README rewrite (centered title, TOC), bilingual setup, git init, conventional commit, gh repo create, push, semantic tag. Triggers on: 'share to GitHub', '/GitHub格式规范', '上传到 GitHub', '发布到 GitHub', '推到 GitHub', '发到 GitHub', '上传GitHub', '发布GitHub'."
+description: "Use when the user wants to share a project to GitHub. Runs a full pipeline: root audit, file naming and structure, document fixes (headings, code-block language tags, table alignment, explicit command interpreters), generate missing files (LICENSE, .gitignore, CONTRIBUTING.md, Issue/PR templates), README rewrite (centered title, TOC), bilingual setup, git init, conventional commit, gh repo create, push, set repo About (description + topics), semantic tag. Triggers on: 'share to GitHub', '/GitHub格式规范', '上传到 GitHub', '发布到 GitHub', '推到 GitHub', '发到 GitHub', '上传GitHub', '发布GitHub'."
 ---
 
 # GitHub Format Standards
@@ -233,8 +233,14 @@ docs: add CONTRIBUTING.md
 
 4. `gh repo create` if remote doesn't exist (public, with description from README tagline)
 5. `git push`
-6. If this is a release: `git tag v1.0.0` with semantic versioning, push tags
-7. Output the final GitHub URL
+6. **Set repo About (description + topics)** — GitHub's right-sidebar metadata. Use `gh repo edit`:
+   ```bash
+   gh repo edit owner/repo --description "One-line summary from README tagline"
+   gh repo edit owner/repo --add-topic "topic1" --add-topic "topic2" ...
+   ```
+   Match topics to the `## Topics` section in README. 5-8 topics covering language, platform, and domain.
+7. If this is a release: `git tag v1.0.0` with semantic versioning, push tags
+8. Output the final GitHub URL
 
 ---
 
@@ -250,7 +256,7 @@ After completion:
 | Generate | 5 files | LICENSE, .gitignore, CONTRIBUTING.md, Issue/PR templates |
 | README | Rewritten | Centered title, TOC, 8 sections |
 | Bilingual | Created | zh-CN/READIME.md + zh-CN/SKILL.md |
-| Ship | Pushed | https://github.com/... |
+| Ship | Pushed + About set | https://github.com/... |
 
 ---
 

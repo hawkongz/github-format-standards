@@ -35,7 +35,7 @@
 | 4. 文件生成 | 创建 `LICENSE`、`CONTRIBUTING.md`、`SECURITY.md`、Issue/PR 模板 |
 | 5. README | 重写 README：居中标题、自动目录、热门项目结构 |
 | 6. 双语 | 需要时创建 `zh-CN/`，完整中文翻译 |
-| 7. 发布 | `git init` → 约定式提交 → `gh repo create` → push → 语义化标签 |
+| 7. 发布 | `git init` → 约定式提交 → `gh repo create` → push → 设置 About（描述+标签）→ 语义化标签 |
 
 ## 🚀 快速开始
 
@@ -99,7 +99,7 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/20kiki/github-format-s
 根目录：英文、`zh-CN/`：中文。两份 README 顶部都有 `**Language:**` 互链。翻译自然不机翻。
 
 ### 7. 发布
-`git init` → `git add` → 约定式提交（`feat:`、`fix:`、`docs:`）→ `gh repo create` → `git push` → 正式发布时打语义化标签（`v1.0.0`）。
+`git init` → `git add` → 约定式提交（`feat:`、`fix:`、`docs:`）→ `gh repo create` → `git push` → 设置仓库 About（描述 + 话题标签，通过 `gh repo edit`）→ 正式发布时打语义化标签（`v1.0.0`）。
 
 ## 文件结构
 
