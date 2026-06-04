@@ -30,23 +30,35 @@
 
 ## 🚀 快速开始
 
-> **快速开始必须对零基础用户友好。** 交代清楚：在哪执行命令、粘贴什么、装完怎么确认成功。
+> **快速开始必须对零基础用户友好。** 交代清楚：需要哪些文件、在哪执行命令、装完怎么确认成功。
 
-> **前置条件：** [列出必需的环境，如 "已安装 git 和 python3"]
+> **前置条件：** [列出必需的环境，如 `python 3.8+`。不要列 `git`，除非项目本身就是 git 工具。]
 
 **第一步 — 打开终端**
 - macOS / Linux：打开终端（Terminal）
 - Windows：`Win + R`，输入 `powershell`，回车
 
-**第二步 — 运行**（在哪个目录下执行都可以）
+**第二步 — 只下载 skill 需要的文件**
 
+[说明需要哪些文件、为什么]
+
+macOS / Linux：
 ```bash
-git clone https://github.com/username/project.git ~/.claude/skills/project-name
+mkdir -p ~/.claude/skills/project-name
+curl -o ~/.claude/skills/project-name/SKILL.md https://raw.githubusercontent.com/username/project/main/SKILL.md
 ```
 
-**第三步 — 完成。** [说明安装后如何验证、如何使用。如果是 Claude Code skill，直接说明 skill 已可用、如何触发。]
+Windows（PowerShell）：
+```powershell
+New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.claude\skills\project-name"
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/username/project/main/SKILL.md" -OutFile "$env:USERPROFILE\.claude\skills\project-name\SKILL.md"
+```
 
-> 命令会把项目文件下载到对应目录。以后想更新，进入该目录执行 `git pull`。
+**第三步 — 完成。** [说明安装后如何验证、如何使用。]
+
+> 以后想更新：重新执行同样的命令，覆盖旧文件即可。
+
+> **原则：只下载 skill 运行需要的文件。** 不要 `git clone` 整个仓库——README、LICENSE、zh-CN/ 是给 GitHub 访客看的，skill 不需要它们。
 
 ## 📦 安装
 

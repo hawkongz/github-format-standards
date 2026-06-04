@@ -112,21 +112,31 @@ Rewrite README to this structure. **Title centered, with table of contents.**
 
 **Template:**
 ```
-> **What you need:** [prerequisites — e.g. "git installed", "python 3.8+"]
+> **What you need:** [prerequisites — e.g. "python 3.8+"]
 
 **Step 1 — Open terminal**
 - macOS / Linux: Open Terminal
 - Windows: Win + R, type `powershell`, Enter
 
-**Step 2 — Run** (any folder is fine)
-`command here`
+**Step 2 — Download only the files the skill needs**
 
-**Step 3 — Done.** [What happens next, how to verify it worked]
+[State which files and why: e.g. "The skill is a single SKILL.md" or "needs SKILL.md + eyes.py"]
+
+macOS / Linux:
+`mkdir -p ... && curl -o ... raw.githubusercontent.com/...`
+
+Windows (PowerShell):
+`New-Item ... && Invoke-WebRequest ...`
+
+**Step 3 — Done.** [How to verify, how to trigger the skill]
+
+> To update: re-run the same commands.
 ```
 
 **Rules:**
-- No vague hand-waving. Tell the reader exactly what program to open and what to expect.
-- Claude Code skills: install command must be `git clone <repo-url> ~/.claude/skills/<name>` (not `cp`, not manual download)
+- **Download only what the skill needs to function.** Never `git clone` the whole repo — README, LICENSE, zh-CN/ are for GitHub readers, not for the skill. A pure SKILL.md skill needs 1 file; a skill with scripts needs only those scripts + SKILL.md.
+- Provide both Unix (`curl`) and Windows (`Invoke-WebRequest`) commands. The reader should never need to install `git` just to get a skill.
+- No vague hand-waving. Tell the reader exactly what files they're getting and why.
 - If the skill has extra deps (pip packages, API keys), list them as numbered steps before "Done"
 - End with a clear confirmation: what indicates success, how to trigger the skill
 
