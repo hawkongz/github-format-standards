@@ -62,6 +62,7 @@ Go through every `.md` file and fix:
 - [ ] Proper nouns: `GitHub` not `github`, `JavaScript` not `Javascript`
 - [ ] File endings: exactly one trailing blank line
 - [ ] Image paths: relative or CDN, never absolute local paths
+- [ ] No vague/informal expressions: replace "你懂的", "you know the drill", "just works" with precise instructions. Use clean `macOS / Linux:` format for platform labels, never "you already know 😄"
 
 ### Phase 4: Generate Missing Files
 
@@ -106,12 +107,28 @@ Rewrite README to this structure. **Title centered, with table of contents.**
 * **Feature 2:** description
 
 ## 🚀 Quick Start
-```bash
-# Every command must include its interpreter — no guessing required
-python script.py input.txt
-bash setup.sh
-powershell -Command "..."
+
+> **Beginner-friendly format required.** Every Quick Start must answer: where to run commands, what to paste, and "is it done?".
+
+**Template:**
 ```
+> **What you need:** [prerequisites — e.g. "git installed", "python 3.8+"]
+
+**Step 1 — Open terminal**
+- macOS / Linux: Open Terminal
+- Windows: Win + R, type `powershell`, Enter
+
+**Step 2 — Run** (any folder is fine)
+`command here`
+
+**Step 3 — Done.** [What happens next, how to verify it worked]
+```
+
+**Rules:**
+- No vague hand-waving. Tell the reader exactly what program to open and what to expect.
+- Claude Code skills: install command must be `git clone <repo-url> ~/.claude/skills/<name>` (not `cp`, not manual download)
+- If the skill has extra deps (pip packages, API keys), list them as numbered steps before "Done"
+- End with a clear confirmation: what indicates success, how to trigger the skill
 
 ## 📦 Installation
 ## 📖 Usage
@@ -120,9 +137,17 @@ powershell -Command "..."
 ## 📄 License
 ```
 
+**Topics section** (add before Contributing):
+- Required: a `## Topics` section with clickable GitHub topic links
+- Format: `[`tag-name`](https://github.com/topics/tag-name)` — each tag links to GitHub's topic discovery page
+- Include 5-8 relevant topics that describe the project's language, platform, and domain
+- Add `[Topics](#topics)` to the TOC
+
 **TOC rules**:
 - Auto-generate from `##` headings in the README
 - Use anchor links: `[Features](#features)`, `[Quick Start](#quick-start)`
+- **Critical — emoji in headings breaks anchors:** GitHub strips emoji from heading IDs and prepends `-`. `## 🔍 The Problem` → `#-the-problem` (NOT `#the-problem`). Always verify TOC anchors match actual heading IDs.
+- **No dead TOC links:** Every TOC entry must have a corresponding `##` heading in the document. Remove any TOC entry that lacks its target heading.
 - Emoji prefix per section for visual scanning (optional, skip if the user dislikes emojis)
 
 ### Phase 6: Bilingual Setup (Chinese projects)

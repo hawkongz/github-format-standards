@@ -5,83 +5,81 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-1.0.0-green.svg)]()
 
-## 简介
+## 📋 目录
 
-[2-3 段文字展开描述项目背景、要解决的问题、核心思路。让读者理解 WHY，而不仅仅是 WHAT。]
+- [功能特性](#功能特性)
+- [快速开始](#快速开始)
+- [安装](#安装)
+- [标签](#标签)
+- [贡献指南](#贡献指南)
+- [许可证](#许可证)
 
-## 功能特性
+> **TOC 锚点规则：** GitHub 会把标题里的 emoji 从锚点 ID 中删掉并补一个 `-`。
+> `## 🔍 功能特性` → 锚点是 `#-功能特性`（不是 `#功能特性`）。
+> 生成 TOC 后必须逐个验证锚点与实际标题匹配，且每个 TOC 条目必须有对应的 `##` 标题。
 
-- 特性一：简要说明
-- 特性二：简要说明
-- 特性三：简要说明
+---
 
-## 演示
+[项目背景描述 — 2-3 段，先讲 WHY 再讲 WHAT。不要直接跳到功能列表。]
 
-![截图](path/to/screenshot.png)
+## ✨ 功能特性
 
-## 快速开始
+- **特性一：** 简要说明
+- **特性二：** 简要说明
+- **特性三：** 简要说明
+
+## 🚀 快速开始
+
+> **快速开始必须对零基础用户友好。** 交代清楚：在哪执行命令、粘贴什么、装完怎么确认成功。
+
+> **前置条件：** [列出必需的环境，如 "已安装 git 和 python3"]
+
+**第一步 — 打开终端**
+- macOS / Linux：打开终端（Terminal）
+- Windows：`Win + R`，输入 `powershell`，回车
+
+**第二步 — 运行**（在哪个目录下执行都可以）
 
 ```bash
-# 克隆项目
-git clone https://github.com/username/project.git
-cd project
-
-# 安装依赖
-npm install
-
-# 启动
-npm start
+git clone https://github.com/username/project.git ~/.claude/skills/project-name
 ```
 
-## 安装
+**第三步 — 完成。** [说明安装后如何验证、如何使用。如果是 Claude Code skill，直接说明 skill 已可用、如何触发。]
 
-详细安装步骤：
+> 命令会把项目文件下载到对应目录。以后想更新，进入该目录执行 `git pull`。
+
+## 📦 安装
+
+[详细安装说明 — 各平台差异、多种安装方式等。如果快速开始已覆盖全部内容，本节可简化或省略。]
 
 ### 前置条件
 
-- Node.js >= 18.0
-- npm >= 9.0
+- [依赖项 1 及版本要求]
+- [依赖项 2 及版本要求]
 
 ### 安装步骤
 
 ```bash
-npm install project-name
+# 具体安装命令
 ```
 
-## 使用方法
+## 📖 使用方法
 
-```javascript
-import { myFunction } from 'project-name';
-
-const result = myFunction({ param: 'value' });
-console.log(result);
+```bash
+# 每个命令前加注释说明用途
+python script.py input.txt
 ```
 
-### 示例
+## 标签
 
-[提供实际使用场景的完整示例代码]
+[`tag1`](https://github.com/topics/tag1) [`tag2`](https://github.com/topics/tag2) [`tag3`](https://github.com/topics/tag3) [`tag4`](https://github.com/topics/tag4) [`tag5`](https://github.com/topics/tag5)
 
-## 配置
+> 5-8 个标签，覆盖语言、平台、领域。每个标签链接到 `https://github.com/topics/<tag>`。
 
-| 参数     | 类型   | 默认值  | 说明         |
-| :------- | :----- | :------ | :----------- |
-| `option1` | string | `""`    | 参数说明     |
-| `option2` | number | `3000`  | 参数说明     |
-
-## API 文档
-
-### `myFunction(options)`
-
-参数说明和返回值说明。
-
-## 贡献指南
+## 🤝 贡献指南
 
 请参阅 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
-## 许可证
+## 📄 许可证
 
 本项目基于 [MIT](LICENSE) 协议开源。
-
-## 致谢
-
-- [项目/人名](链接) — 说明致谢原因
