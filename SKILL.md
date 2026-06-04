@@ -180,12 +180,14 @@ Windows (PowerShell):
 **TOC rules**:
 - Auto-generate from `##` headings in the README
 - Use anchor links: `[Features](#features)`, `[Quick Start](#quick-start)`
-- **Critical — emoji in headings breaks anchors:** GitHub strips emoji from heading IDs and prepends `-`. `## 🔍 The Problem` → `#-the-problem` (NOT `#the-problem`). Always verify TOC anchors match actual heading IDs.
+- **Critical — emoji in headings breaks anchors:** GitHub strips emoji from heading IDs and prepends `-` (for the space between emoji and text). `## 🔍 The Problem` → `#-the-problem` (NOT `#the-problem`).
+- **Critical — avoid variation-selector emoji in headings:** Emoji that include U+FE0F (variation selector-16), such as `⌨️` `☁️` `✈️`, break heading IDs. GitHub strips the base symbol but leaves U+FE0F as an invisible character, producing IDs like `#️-keyboard-shortcuts` instead of `#-keyboard-shortcuts`. The TOC link will silently fail. **Only use single-codepoint emoji** (📋 ⚡ 🔧 🚀 📦 🧠 💬 📖 ✨ 📌 🤝 📄 🔍) — never variation-selector emoji.
 - **No dead TOC links:** Every TOC entry must have a corresponding `##` heading in the document. Remove any TOC entry that lacks its target heading.
 - **Every `##` heading emoji must be unique across the document.** No two sections may share the same emoji — duplicate emojis cause anchor ambiguity and degrade visual scanning. Audit all headings before finalizing.
-- **Emoji set reference (pick from these, no repeats):** `📋` commands/list, `⌨️` keyboard/shortcuts, `💬` conversation/chat, `🔧` config/setup, `🚀` quickstart/workflow, `📦` installation/packaging, `🧠` strategy/thinking, `📚` resources, `✨` features, `📌` topics/tags, `🤝` contributing, `📄` license, `🔍` problem/investigation, `📖` usage/guide
-- Emoji prefix per section for visual scanning (optional, skip if the user dislikes emojis)
-- **After writing README, verify at least 2 random TOC links:** use WebFetch on the raw GitHub README to confirm the rendered heading IDs match the TOC anchors
+- **Emoji set reference (safe single-codepoint only):** `📋` TOC/commands/list, `⚡` shortcuts/quick-actions, `💬` conversation/chat, `🔧` config/setup, `🚀` quickstart/workflow, `📦` installation/packaging, `🧠` strategy/thinking, `📚` resources, `✨` features, `📌` topics/tags, `🤝` contributing, `📄` license, `🔍` problem/investigation, `📖` usage/guide, `❓` FAQ/troubleshooting, `🛠️` tools/utilities
+- **BANNED emoji (variation selectors break GitHub heading IDs):** `⌨️` `☁️` `✈️` `❤️` `⭐️` `🌐️` `🎨️` `🔒️` `🔓️` `📡️` — anything with invisible U+FE0F. When in doubt, check: if the emoji has more than one codepoint, avoid it.
+- Emoji prefix per section for visual scanning (mandatory for all `##` headings).
+- **After writing README, verify at least 2 random TOC links:** use WebFetch on the raw GitHub README to confirm the rendered heading IDs match the TOC anchors. If WebFetch unavailable, use Python to fetch the rendered page and grep for `id="user-content-`.
 
 ### Phase 6: Bilingual Setup (Chinese projects)
 
