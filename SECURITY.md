@@ -2,7 +2,7 @@
 
 ## Reporting a Vulnerability
 
-Report security issues via [GitHub Security Advisories](https://github.com/20kiki/github-format-standards/security/advisories/new).
+Report security issues via [GitHub Security Advisories](https://github.com/hawkongz/github-format-standards/security/advisories/new).
 
 **Do not open a public issue.**
 

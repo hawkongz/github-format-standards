@@ -2,7 +2,7 @@
   <h1>GitHub 格式规范</h1>
   <p>一个 Claude Code skill — 一行命令，审计、修正、发布任何项目到 GitHub。</p>
 
-  <a href="https://github.com/20kiki/github-format-standards/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/20kiki/github-format-standards?style=social"></a>
+  <a href="https://github.com/hawkongz/github-format-standards/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/hawkongz/github-format-standards?style=social"></a>
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-blue.svg"></a>
   <a href="https://claude.ai/code"><img alt="Platform: Claude Code" src="https://img.shields.io/badge/Platform-Claude%20Code-orange"></a>
 
@@ -50,18 +50,18 @@
 macOS / Linux：
 ```bash
 mkdir -p ~/.claude/skills/github-format-standards/references
-curl -o ~/.claude/skills/github-format-standards/SKILL.md https://raw.githubusercontent.com/20kiki/github-format-standards/master/SKILL.md
+curl -o ~/.claude/skills/github-format-standards/SKILL.md https://raw.githubusercontent.com/hawkongz/github-format-standards/master/SKILL.md
 for f in readme-template issue-template pr-template contributing-template; do
-  curl -o ~/.claude/skills/github-format-standards/references/$f.md https://raw.githubusercontent.com/20kiki/github-format-standards/master/references/$f.md
+  curl -o ~/.claude/skills/github-format-standards/references/$f.md https://raw.githubusercontent.com/hawkongz/github-format-standards/master/references/$f.md
 done
 ```
 
 Windows（PowerShell）：
 ```powershell
 New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.claude\skills\github-format-standards\references"
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/20kiki/github-format-standards/master/SKILL.md" -OutFile "$env:USERPROFILE\.claude\skills\github-format-standards\SKILL.md"
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/hawkongz/github-format-standards/master/SKILL.md" -OutFile "$env:USERPROFILE\.claude\skills\github-format-standards\SKILL.md"
 @("readme-template","issue-template","pr-template","contributing-template") | ForEach-Object {
-  Invoke-WebRequest -Uri "https://raw.githubusercontent.com/20kiki/github-format-standards/master/references/$_.md" -OutFile "$env:USERPROFILE\.claude\skills\github-format-standards\references\$_.md"
+  Invoke-WebRequest -Uri "https://raw.githubusercontent.com/hawkongz/github-format-standards/master/references/$_.md" -OutFile "$env:USERPROFILE\.claude\skills\github-format-standards\references\$_.md"
 }
 ```
 

@@ -4,7 +4,7 @@
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
   [![Platform](https://img.shields.io/badge/Platform-Claude%20Code-blue)](https://code.claude.com)
-  [![Stars](https://img.shields.io/github/stars/20kiki/github-format-standards)](https://github.com/20kiki/github-format-standards)
+  [![Stars](https://img.shields.io/github/stars/hawkongz/github-format-standards)](https://github.com/hawkongz/github-format-standards)
 
   <p><strong>Language:</strong> <a href="README.md">English</a> | <a href="zh-CN/README.md">简体中文</a></p>
 </div>
@@ -50,18 +50,18 @@ The skill needs two things: `SKILL.md` + `references/` (4 template files). That'
 macOS / Linux:
 ```bash
 mkdir -p ~/.claude/skills/github-format-standards/references
-curl -o ~/.claude/skills/github-format-standards/SKILL.md https://raw.githubusercontent.com/20kiki/github-format-standards/master/SKILL.md
+curl -o ~/.claude/skills/github-format-standards/SKILL.md https://raw.githubusercontent.com/hawkongz/github-format-standards/master/SKILL.md
 for f in readme-template issue-template pr-template contributing-template; do
-  curl -o ~/.claude/skills/github-format-standards/references/$f.md https://raw.githubusercontent.com/20kiki/github-format-standards/master/references/$f.md
+  curl -o ~/.claude/skills/github-format-standards/references/$f.md https://raw.githubusercontent.com/hawkongz/github-format-standards/master/references/$f.md
 done
 ```
 
 Windows (PowerShell):
 ```powershell
 New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.claude\skills\github-format-standards\references"
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/20kiki/github-format-standards/master/SKILL.md" -OutFile "$env:USERPROFILE\.claude\skills\github-format-standards\SKILL.md"
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/hawkongz/github-format-standards/master/SKILL.md" -OutFile "$env:USERPROFILE\.claude\skills\github-format-standards\SKILL.md"
 @("readme-template","issue-template","pr-template","contributing-template") | ForEach-Object {
-  Invoke-WebRequest -Uri "https://raw.githubusercontent.com/20kiki/github-format-standards/master/references/$_.md" -OutFile "$env:USERPROFILE\.claude\skills\github-format-standards\references\$_.md"
+  Invoke-WebRequest -Uri "https://raw.githubusercontent.com/hawkongz/github-format-standards/master/references/$_.md" -OutFile "$env:USERPROFILE\.claude\skills\github-format-standards\references\$_.md"
 }
 ```
 
