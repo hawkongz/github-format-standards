@@ -125,9 +125,11 @@ powershell -Command "..."
 - 使用锚点链接：`[功能特性](#功能特性)`、`[快速开始](#快速开始)`
 - 每个章节可用 emoji 前缀增强可扫描性（用户不喜欢则跳过）
 
-### 阶段六：双语设置（中文项目）
+### 阶段六：双语设置
 
-如果项目是中文的或用户需要双语：
+**主动询问用户：**「这个项目需要中英双语文档吗？」
+
+如果用户确认需要：
 
 ```
 project/
@@ -147,7 +149,7 @@ project/
 
 1. 不是 git 仓库则 `git init`
 2. `git add` 所有文件（排除密钥、`.env`、二进制文件）
-3. 用约定式提交格式 commit：
+3. 用约定式提交格式 commit。**提交作者是用户本人**（使用 `git config user.name` / `user.email` 的配置）。询问用户是否需要在提交信息末尾加上 `Co-Authored-By: Claude <noreply@anthropic.com>`，只有用户同意才添加。
 
 ```
 type(scope): subject

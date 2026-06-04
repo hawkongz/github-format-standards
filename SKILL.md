@@ -189,9 +189,11 @@ Windows (PowerShell):
 - Emoji prefix per section for visual scanning (mandatory for all `##` headings).
 - **After writing README, verify at least 2 random TOC links:** use WebFetch on the raw GitHub README to confirm the rendered heading IDs match the TOC anchors. If WebFetch unavailable, use Python to fetch the rendered page and grep for `id="user-content-`.
 
-### Phase 6: Bilingual Setup (Chinese projects)
+### Phase 6: Bilingual Setup
 
-If the project is Chinese or the user wants bilingual docs:
+**Ask the user:** "这个项目需要中英双语文档吗？(Does this project need bilingual Chinese/English docs?)"
+
+If the user says yes:
 
 ```
 project/
@@ -211,7 +213,7 @@ Translate content, don't just copy — the Chinese version should read naturally
 
 1. `git init` if not already a repo
 2. `git add` all files (exclude secrets, `.env`, binaries)
-3. Commit with conventional commit format:
+3. Commit with conventional commit format. **The commit author is the user** (from their `git config user.name` / `user.email`). Ask if they'd like to add `Co-Authored-By: Claude <noreply@anthropic.com>` — only include it if the user says yes.
 
 ```
 type(scope): subject
