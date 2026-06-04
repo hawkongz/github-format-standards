@@ -1,6 +1,6 @@
 ---
 name: github-format-standards
-description: 当用户想把项目分享到 GitHub 时使用。执行完整流水线：根目录审查 → 文件命名与目录结构 → 文档修复 → 生成缺失文件（LICENSE、.gitignore、CONTRIBUTING.md、Issue/PR 模板）→ README 重写（居中标题、目录）→ 双语设置 → git init → 约定式提交 → gh repo create → push → 语义化标签。触发词："分享到 GitHub"、"/GitHub格式规范"、"发布这个项目"。
+description: "当用户想把项目分享到 GitHub 时使用。执行完整流水线：根目录审查、文件命名与目录结构、文档修复、生成缺失文件（LICENSE .gitignore CONTRIBUTING.md Issue/PR 模板）、README 重写（居中标题 目录）、双语设置、git init、约定式提交、gh repo create、push、语义化标签。触发词：分享到 GitHub、/GitHub格式规范。"
 ---
 
 # GitHub 格式规范
