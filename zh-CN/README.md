@@ -17,7 +17,6 @@
 - [使用](#使用)
 - [七阶段流水线](#七阶段流水线)
 - [文件结构](#文件结构)
-- [相关项目](#相关项目)
 - [许可证](#许可证)
 
 ---
@@ -45,12 +44,7 @@ git clone https://github.com/20kiki/github-format-standards.git \
 
 ## 使用
 
-| 你说 | 触发 |
-| :--- | :--- |
-| `/GitHub格式规范` | 直接调用 |
-| "把这个分享到 GitHub" | 完整流水线 |
-| "帮我看下格式" | 审计 + 修复 |
-| "创建 Issue 和 PR 模板" | 仅生成文件 |
+说 `/GitHub格式规范` 或「把这个分享到 GitHub」就会跑完整七阶段流水线。
 
 ## 七阶段流水线
 
@@ -90,11 +84,6 @@ git clone https://github.com/20kiki/github-format-standards.git \
     ├── README.md                         # 简体中文
     └── SKILL.md                          # 简体中文 Skill
 ```
-
-## 相关项目
-
-- [github-format-demo](https://github.com/20kiki/github-format-demo) — 格式优化效果演示
-- [causal-explanation-protocol](https://github.com/20kiki/causal-explanation-protocol) — 使用本 skill 规范的真实项目
 
 ## 许可证
 

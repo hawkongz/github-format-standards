@@ -1,6 +1,6 @@
 ---
 name: github-format-standards
-description: GitHub project formatting standards — use when preparing a project for GitHub, writing or editing README.md, ISSUE_TEMPLATE, PULL_REQUEST_TEMPLATE, CONTRIBUTING.md, CODE_OF_CONDUCT.md, or any other GitHub documentation. Automatically enforces GitHub best practices for Markdown formatting, document structure, and Chinese-English mixed typography. Trigger even for casual requests like "check my formatting", "polish the README", or "getting ready to publish on GitHub".
+description: Use when the user wants to share a project to GitHub. Runs a full pipeline: root audit → file naming & structure → document fixes → generate missing files (LICENSE, .gitignore, CONTRIBUTING.md, Issue/PR templates) → README rewrite (centered title, TOC) → bilingual setup → git init → conventional commit → gh repo create → push → semantic tag. Triggers on "share to GitHub", "/GitHub格式规范", or "publish this project".
 ---
 
 # GitHub Format Standards

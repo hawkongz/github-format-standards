@@ -17,7 +17,6 @@
 - [Usage](#usage)
 - [The 7-Phase Pipeline](#the-7-phase-pipeline)
 - [File Structure](#file-structure)
-- [See Also](#see-also)
 - [License](#license)
 
 ---
@@ -45,12 +44,7 @@ git clone https://github.com/20kiki/github-format-standards.git \
 
 ## Usage
 
-| You say | Triggers |
-| :--- | :--- |
-| `/GitHub格式规范` | Direct invocation |
-| "Share this to GitHub" | Full pipeline |
-| "Check my formatting" | Audit + fix only |
-| "Create Issue and PR templates" | Generate only |
+Say `/GitHub格式规范` or "Share this to GitHub" — the full 7-phase pipeline runs.
 
 ## The 7-Phase Pipeline
 
@@ -90,11 +84,6 @@ Root: English, `zh-CN/`: Chinese. Both have `**Language:**` row linking to each 
     ├── README.md                         # 简体中文
     └── SKILL.md                          # 简体中文 Skill
 ```
-
-## See Also
-
-- [github-format-demo](https://github.com/20kiki/github-format-demo) — demo of the formatted output
-- [causal-explanation-protocol](https://github.com/20kiki/causal-explanation-protocol) — real project using this skill's conventions
 
 ## License
 

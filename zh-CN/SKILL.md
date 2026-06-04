@@ -1,6 +1,6 @@
 ---
 name: github-format-standards
-description: GitHub 项目格式规范 - 当用户准备将项目分享到 GitHub、编写或修改 README.md、ISSUE_TEMPLATE、PULL_REQUEST_TEMPLATE、CONTRIBUTING.md、CODE_OF_CONDUCT.md 等 GitHub 文档时使用此 skill。自动按照 GitHub 最佳实践规范 Markdown 格式、文档结构、中英文混排。即使用户只是说"帮我看下格式"、"整理下 README"、"准备发布到 GitHub"，也应该触发此 skill。
+description: 当用户想把项目分享到 GitHub 时使用。执行完整流水线：根目录审查 → 文件命名与目录结构 → 文档修复 → 生成缺失文件（LICENSE、.gitignore、CONTRIBUTING.md、Issue/PR 模板）→ README 重写（居中标题、目录）→ 双语设置 → git init → 约定式提交 → gh repo create → push → 语义化标签。触发词："分享到 GitHub"、"/GitHub格式规范"、"发布这个项目"。
 ---
 
 # GitHub 格式规范
