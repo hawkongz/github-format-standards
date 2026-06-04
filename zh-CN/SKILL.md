@@ -68,6 +68,7 @@ project/
 
 - **`LICENSE`**（必选）：用户未指定则默认 MIT
 - **`.gitignore`**（必选）：根据项目语言生成
+- **`AUTHORS.md`**（必选）：标注创作者和重要贡献者。用户是主要作者；如果项目借助 Claude Code 协作完成，将 Claude 列为贡献者。格式：创作者姓名/GitHub 用户名、贡献者姓名、每人一句话说明角色。
 - **`CONTRIBUTING.md`**（推荐）：多文件项目都应该有
 - **`SECURITY.md`**（推荐）：安全漏洞报告说明
 - **`.github/ISSUE_TEMPLATE/`**：bug 报告 + 功能建议 + `config.yml`
@@ -111,6 +112,7 @@ project/
   [![Stars](https://img.shields.io/github/stars/owner/repo)](https://github.com/owner/repo)
 
   <p><strong>Language:</strong> <a href="README.md">English</a> | <a href="zh-CN/README.md">简体中文</a></p>
+  <p><strong>Created by</strong> <a href="https://github.com/USERNAME">@USERNAME</a> with Claude</p>
 </div>
 
 ---

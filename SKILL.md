@@ -68,6 +68,7 @@ Go through every `.md` file and fix:
 
 - **`LICENSE`** (required): default to MIT if the user doesn't specify
 - **`.gitignore`** (required): generate based on project language
+- **`AUTHORS.md`** (required): credit the creator and any significant contributors. The user is the primary author; include Claude as a contributor if the project was built with Claude Code collaboration. Format: creator name/GitHub handle, contributor names, and a one-line description of each person's role.
 - **`CONTRIBUTING.md`** (recommended): for any project with >1 file
 - **`SECURITY.md`** (recommended): responsible disclosure instructions
 - **`.github/ISSUE_TEMPLATE/`**: bug report + feature request + `config.yml`
@@ -111,6 +112,7 @@ Every badge uses an explicit shields.io color. If the project has no standard co
   [![Stars](https://img.shields.io/github/stars/owner/repo)](https://github.com/owner/repo)
 
   <p><strong>Language:</strong> <a href="README.md">English</a> | <a href="zh-CN/README.md">简体中文</a></p>
+  <p><strong>Created by</strong> <a href="https://github.com/USERNAME">@USERNAME</a> with Claude</p>
 </div>
 
 ---
