@@ -112,7 +112,6 @@ project/
   [![Stars](https://img.shields.io/github/stars/owner/repo)](https://github.com/owner/repo)
 
   <p><strong>Language:</strong> <a href="README.md">English</a> | <a href="zh-CN/README.md">简体中文</a></p>
-  <p><strong>Created by</strong> <a href="https://github.com/USERNAME">@USERNAME</a> with Claude</p>
 </div>
 
 ---

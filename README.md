@@ -7,7 +7,6 @@
   [![Stars](https://img.shields.io/github/stars/hawkongz/github-format-standards)](https://github.com/hawkongz/github-format-standards)
 
   <p><strong>Language:</strong> <a href="README.md">English</a> | <a href="zh-CN/README.md">简体中文</a></p>
-  <p><strong>Created by</strong> <a href="https://github.com/hawkongz">@hawkongz</a> with Claude</p>
 </div>
 
 ---
