@@ -18,6 +18,7 @@
 - [使用](#使用)
 - [七阶段流水线](#七阶段流水线)
 - [文件结构](#文件结构)
+- [标签](#标签)
 - [许可证](#许可证)
 
 ---
@@ -103,6 +104,10 @@ git clone https://github.com/20kiki/github-format-standards.git \
     ├── README.md                         # 简体中文
     └── SKILL.md                          # 简体中文 Skill
 ```
+
+## 标签
+
+[`claude-code`](https://github.com/topics/claude-code) [`skill`](https://github.com/topics/skill) [`github`](https://github.com/topics/github) [`markdown`](https://github.com/topics/markdown) [`readme`](https://github.com/topics/readme) [`formatting`](https://github.com/topics/formatting)
 
 ## 许可证
 

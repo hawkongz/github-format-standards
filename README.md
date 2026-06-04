@@ -18,6 +18,7 @@
 - [Usage](#usage)
 - [The 7-Phase Pipeline](#the-7-phase-pipeline)
 - [File Structure](#file-structure)
+- [Topics](#topics)
 - [License](#license)
 
 ---
@@ -103,6 +104,10 @@ Root: English, `zh-CN/`: Chinese. Both have `**Language:**` row linking to each 
     ├── README.md                         # 简体中文
     └── SKILL.md                          # 简体中文 Skill
 ```
+
+## Topics
+
+[`claude-code`](https://github.com/topics/claude-code) [`skill`](https://github.com/topics/skill) [`github`](https://github.com/topics/github) [`markdown`](https://github.com/topics/markdown) [`readme`](https://github.com/topics/readme) [`formatting`](https://github.com/topics/formatting)
 
 ## License
 
