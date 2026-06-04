@@ -56,6 +56,7 @@ project/
 - [ ] 代码块：每个 ` ``` ` 都标注语言
 - [ ] 表格：分隔行加 `:---` 对齐标记
 - [ ] 列表：符号统一（`*` 优先），子列表缩进 2 空格
+- [ ] 命令可执行：每条 shell 命令必须显式标注解释器（`python script.py` 而非 `./script.py`；`bash script.sh` 而非 `./script.sh`；Windows 专用命令用 `powershell ...`）。读者不应猜测如何运行一条命令。
 - [ ] 链接：无裸 URL，图片有 alt 文本
 - [ ] 中英文空格：`使用 GitHub` 不是 `使用GitHub`；`支持 10 个` 不是 `支持10个`
 - [ ] 专有名词：`GitHub` 不是 `github`，`JavaScript` 不是 `Javascript`
@@ -106,7 +107,10 @@ project/
 
 ## 🚀 快速开始
 ```bash
-# 命令必须可直接复制粘贴
+# 每条命令必须带解释器——不让人猜
+python script.py input.txt
+bash setup.sh
+powershell -Command "..."
 ```
 
 ## 📦 安装

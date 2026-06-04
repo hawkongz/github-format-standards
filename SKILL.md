@@ -56,6 +56,7 @@ Go through every `.md` file and fix:
 - [ ] Code blocks: every ` ``` ` has a language tag
 - [ ] Tables: separator row has `:---` alignment markers
 - [ ] Lists: consistent marker (`*` preferred), 2-space sub-indent
+- [ ] Commands: every shell command has an explicit interpreter (`python script.py` not `./script.py`; `bash script.sh` not `./script.sh`; `powershell ...` for Windows-specific commands). The reader should never guess how to run a command.
 - [ ] Links: no bare URLs, every image has alt text
 - [ ] Chinese spacing: `使用 GitHub` not `使用GitHub`; `支持 10 个` not `支持10个`
 - [ ] Proper nouns: `GitHub` not `github`, `JavaScript` not `Javascript`
@@ -106,7 +107,10 @@ Rewrite README to this structure. **Title centered, with table of contents.**
 
 ## 🚀 Quick Start
 ```bash
-# Commands must be copy-paste ready
+# Every command must include its interpreter — no guessing required
+python script.py input.txt
+bash setup.sh
+powershell -Command "..."
 ```
 
 ## 📦 Installation
