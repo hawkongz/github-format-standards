@@ -1,6 +1,6 @@
 <div align="center">
   <h1>GitHub Format Standards</h1>
-  <p>A <a href="https://claude.ai/code">Claude Code</a> skill — one command to audit, fix, and ship any project to GitHub.</p>
+  <p>A Claude Code skill — one command to audit, fix, and ship any project to GitHub.</p>
 
   <a href="https://github.com/20kiki/github-format-standards/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/20kiki/github-format-standards?style=social"></a>
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-blue.svg"></a>
@@ -17,6 +17,7 @@
 - [Usage](#usage)
 - [The 7-Phase Pipeline](#the-7-phase-pipeline)
 - [File Structure](#file-structure)
+- [See Also](#see-also)
 - [License](#license)
 
 ---
@@ -29,11 +30,11 @@ Say "share to GitHub" and this skill handles everything:
 | :--- | :--- |
 | 1. Root Audit | Scans for large files, secrets, build artifacts; generates `.gitignore` |
 | 2. Structure | Fixes file names (lowercase, no spaces), moves files into `src/` `tests/` etc. |
-| 3. Doc Fixes | Aligns tables, tags code blocks, fixes Chinese/English spacing, corrects proper nouns |
+| 3. Doc Fixes | Aligns tables, tags code blocks, fixes Chinese/English spacing, proper nouns |
 | 4. Generate | Creates `LICENSE`, `CONTRIBUTING.md`, `SECURITY.md`, Issue/PR templates |
 | 5. README | Rewrites README with centered title, TOC, and top-project structure |
 | 6. Bilingual | Sets up `zh-CN/` with full Chinese translation if needed |
-| 7. Ship | `git init` → commit (conventional format) → `gh repo create` → push → tag |
+| 7. Ship | `git init` → conventional commit → `gh repo create` → push → semantic tag |
 
 ## Installation
 
@@ -42,11 +43,7 @@ git clone https://github.com/20kiki/github-format-standards.git \
   ~/.claude/skills/github-format-standards
 ```
 
-Or install via the [Claude Code plugin marketplace](https://claude.ai/code).
-
 ## Usage
-
-In [Claude Code](https://claude.ai/code):
 
 | You say | Triggers |
 | :--- | :--- |
@@ -58,40 +55,25 @@ In [Claude Code](https://claude.ai/code):
 ## The 7-Phase Pipeline
 
 ### 1. Root Directory Audit
-- Red-flags large files, temp files, build artifacts, [`.env` secrets](https://github.com/github/gitignore), IDE cruft
-- Generates `.gitignore` with language-appropriate rules — see [gitignore.io](https://www.toptal.com/developers/gitignore) for reference
+Red-flags large files (>1MB), temp files, build artifacts, `.env` secrets, IDE cruft. Generates `.gitignore` covering `node_modules/`, `__pycache__/`, `*.pyc`, `.env`, `.DS_Store`, `dist/`, `build/`, IDE directories.
 
 ### 2. File Naming & Structure
-- Enforces lowercase-with-hyphens naming per [Google's file naming conventions](https://google.github.io/styleguide/)
-- Moves files into `src/`, `tests/`, `scripts/`, `examples/`, `docs/`
+Enforces lowercase-with-hyphens. Moves source → `src/`, tests → `tests/`, scripts → `scripts/`, examples → `examples/`, docs → `docs/`. Skips restructuring for single-file projects.
 
 ### 3. Document Fixes
-- Heading hierarchy, [code block language tags](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks), table alignment
-- Chinese/English spacing ([W3C CLReq](https://www.w3.org/TR/clreq/)), proper noun capitalization
-- Image paths ([relative or CDN only](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#images))
+Heading hierarchy, code block language tags, table alignment. Chinese/English spacing, proper noun capitalization (`GitHub` not `github`). Image paths: relative or CDN only.
 
 ### 4. Generate Missing Files
-- [`LICENSE`](https://choosealicense.com/) (MIT by default), `.gitignore`, [`CONTRIBUTING.md`](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/setting-guidelines-for-repository-contributors), [`SECURITY.md`](https://docs.github.com/en/code-security/getting-started/adding-a-security-policy-to-your-repository)
-- [`.github/ISSUE_TEMPLATE/`](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository) + [`.github/PULL_REQUEST_TEMPLATE.md`](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-request-template-for-your-repository)
+`LICENSE` (MIT by default), `.gitignore`, `CONTRIBUTING.md`, `SECURITY.md`, `.github/ISSUE_TEMPLATE/` (bug report + feature request + config), `.github/PULL_REQUEST_TEMPLATE.md`.
 
 ### 5. README Rewrite
-- Centered title + badges (modeled after [FastAPI](https://github.com/fastapi/fastapi), [React](https://github.com/facebook/react), [Next.js](https://github.com/vercel/next.js))
-- Auto-generated [table of contents with anchor links](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#section-links)
-- Structure: Features → Quick Start → Install → Usage → API → Contributing → License
+Centered title + badges, auto-generated TOC from `##` headings. Structure: Features → Quick Start → Install → Usage → API → Contributing → License.
 
 ### 6. Bilingual Setup
-- Root: English, `zh-CN/`: Chinese — same structure as [this project](https://github.com/20kiki/causal-explanation-protocol)
-- Natural translation, not machine translation
+Root: English, `zh-CN/`: Chinese. Both have `**Language:**` row linking to each other. Natural translation, not machine style.
 
 ### 7. Ship
-- [Conventional Commits](https://www.conventionalcommits.org/) (`feat:`, `fix:`, `docs:`)
-- [Semantic Versioning](https://semver.org/) tags (`v1.0.0`)
-- Creates GitHub repo, pushes, outputs URL
-
-## See Also
-
-- [github-format-demo](https://github.com/20kiki/github-format-demo) — demo of the formatted output
-- [causal-explanation-protocol](https://github.com/20kiki/causal-explanation-protocol) — real project using this skill's conventions
+`git init` → `git add` → commit with conventional format (`feat:`, `fix:`, `docs:`) → `gh repo create` → `git push` → semantic version tag (`v1.0.0`) if releasing.
 
 ## File Structure
 
@@ -108,6 +90,11 @@ In [Claude Code](https://claude.ai/code):
     ├── README.md                         # 简体中文
     └── SKILL.md                          # 简体中文 Skill
 ```
+
+## See Also
+
+- [github-format-demo](https://github.com/20kiki/github-format-demo) — demo of the formatted output
+- [causal-explanation-protocol](https://github.com/20kiki/causal-explanation-protocol) — real project using this skill's conventions
 
 ## License
 
