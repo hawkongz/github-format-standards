@@ -212,7 +212,26 @@ Both README files get a language switcher line inside the centered header `<div>
 - Root `README.md` → `<a href="README.md">English</a> | <a href="zh-CN/README.md">简体中文</a>`
 - `zh-CN/README.md` → `<a href="../README.md">English</a> | <a href="README.md">简体中文</a>`
 
-Translate content, don't just copy — the Chinese version should read naturally, not like machine translation.
+**Translation rules (context-aware, not literal):**
+
+1. **Identify domain first.** Before translating, list the project's key domains (e.g. payment/finance, container/infra, AI/ML, security). Domain terms have established translations — use them, don't invent.
+2. **Build a term table.** Extract 5-15 key technical terms from the source and write their correct target-language equivalents. This catches ambiguity early (e.g. `settlement` → 结算 vs 清算 depends on context).
+3. **Verb-object matching.** English reuses verbs across objects (`run a command` / `run a container`); Chinese often needs different verbs (运行命令 / 启动容器). Adjust verbs to fit their objects naturally.
+4. **Community convention wins.** If the project's community already uses a term (e.g. "容器" for container, "工件" for artifact), use it — even if another translation is technically more accurate. Consistency with the ecosystem > dictionary accuracy.
+5. **Keep code references untouched.** Variable names, function names, CLI flags, file paths — never translate these. Only translate surrounding prose.
+
+**Two-perspective review (required after translation):**
+
+After writing the translated document, review it twice — once through each lens:
+
+| Round | Role | Check for… |
+| :--- | :--- | :--- |
+| 🇨🇳 **Chinese native speaker** | Does this sound like idiomatic Chinese? | ① Collocations feel natural (不是翻译腔) ② Technical terms match community usage ③ Sentence length — split English long sentences into shorter Chinese ones ④ Tone matches the project (formal? casual? developer-friendly?) |
+| 🇬🇧 **English native speaker** | Does this preserve the original meaning? | ① No information lost or distorted ② Code examples still work (flags, paths, values unchanged) ③ Warnings/caveats carry the same urgency ④ Back-translate key sentences mentally — do they mean the same thing? |
+
+**Fix anything either reviewer flags.** If the two perspectives conflict, prioritize the Chinese native speaker for wording and the English native speaker for accuracy. Document any intentional deviations (e.g. "this English idiom has no Chinese equivalent, replaced with a functional description").
+
+The final result: a Chinese reader should feel the document was *originally written in Chinese*, and an English reader checking the translation should find every technical detail faithfully preserved.
 
 ### Phase 7: Ship It
 
