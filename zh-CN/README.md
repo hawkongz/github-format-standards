@@ -41,9 +41,8 @@
 > **前置条件：** 电脑上已安装 `git`。在终端输入 `git --version` 能正常输出版本号即可。
 
 **第一步 — 打开终端**
+- **macOS / Linux：** 打开终端（Terminal）
 - **Windows：** 按 `Win + R`，输入 `powershell`，回车
-- **macOS：** 按 `Cmd + 空格`，输入 `terminal`，回车
-- **Linux：** 你懂的 😄
 
 **第二步 — 复制下面这条命令，粘贴到终端里回车**（在哪个目录下执行都可以）：
 

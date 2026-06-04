@@ -41,9 +41,8 @@ Say "share to GitHub" and this skill handles everything:
 > **What you need:** `git` installed on your computer. If `git --version` works in terminal, you're ready.
 
 **Step 1 — Open terminal**
+- **macOS / Linux:** Open Terminal
 - **Windows:** Press `Win + R`, type `powershell`, press Enter
-- **macOS:** Press `Cmd + Space`, type `terminal`, press Enter
-- **Linux:** You already know 😄
 
 **Step 2 — Copy and run this command** (it doesn't matter which folder you're in):
 
