@@ -2,8 +2,9 @@
 
 [一句话简介 — 用最少的字说清楚项目是什么、解决什么问题]
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-1.0.0-green.svg)]()
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Platform](https://img.shields.io/badge/Platform-Claude%20Code-blue)](https://code.claude.com)
+[![Stars](https://img.shields.io/github/stars/username/project)](https://github.com/username/project)
 
 ## 📋 目录
 

@@ -1,6 +1,6 @@
 ---
 name: github-format-standards
-description: "Use when the user wants to share a project to GitHub. Runs a full pipeline: root audit, file naming and structure, document fixes (headings, code-block language tags, table alignment, explicit command interpreters), generate missing files (LICENSE, .gitignore, CONTRIBUTING.md, Issue/PR templates), README rewrite (centered title, TOC), bilingual setup, git init, conventional commit, gh repo create, push, semantic tag. Triggers on 'share to GitHub' or '/GitHub格式规范'."
+description: "Use when the user wants to share a project to GitHub. Runs a full pipeline: root audit, file naming and structure, document fixes (headings, code-block language tags, table alignment, explicit command interpreters), generate missing files (LICENSE, .gitignore, CONTRIBUTING.md, Issue/PR templates), README rewrite (centered title, TOC), bilingual setup, git init, conventional commit, gh repo create, push, semantic tag. Triggers on: 'share to GitHub', '/GitHub格式规范', '上传到 GitHub', '发布到 GitHub', '推到 GitHub', '发到 GitHub', '上传GitHub', '发布GitHub'."
 ---
 
 # GitHub Format Standards
@@ -77,14 +77,38 @@ Go through every `.md` file and fix:
 
 Rewrite README to this structure. **Title centered, with table of contents.**
 
+#### Badge Color Standard (required)
+
+Every badge uses an explicit shields.io color. If the project has no standard color, default to `lightgrey`. Never leave color unset — shields.io defaults to `green`, which reads as "passing/healthy" and is misleading for non-status badges.
+
+| Badge | Color | Example |
+| :--- | :--- | :--- |
+| License (MIT) | `yellow` | `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)` |
+| License (Apache 2.0) | `blue` | `[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)` |
+| License (GPL v3) | `blue` | `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)` |
+| Platform: Claude Code | `blue` | `[![Platform](https://img.shields.io/badge/Platform-Claude%20Code-blue)](https://code.claude.com)` |
+| Platform: Python | `3776AB` | `[![Python](https://img.shields.io/badge/Python-3776AB)](https://python.org)` |
+| Platform: Node.js | `339933` | `[![Node.js](https://img.shields.io/badge/Node.js-339933)](https://nodejs.org)` |
+| Platform: Shell/Bash | `4EAA25` | `[![Shell](https://img.shields.io/badge/Shell-4EAA25)]()` |
+| GitHub Stars | social | `[![Stars](https://img.shields.io/github/stars/owner/repo)](https://github.com/owner/repo)` |
+
+**Badge rules (read before placing any badge):**
+1. **3 badges minimum** every README: License, Platform, Stars
+2. License badge links to the repo's `LICENSE` file
+3. Platform badge links to the platform's official site (omit link if no canonical URL)
+4. Stars badge is a shields.io GitHub social badge — no explicit color, auto-styled
+5. Badges sit immediately below the tagline in the centered header `<div>`
+6. Do NOT use custom/arbitrary colors. Pick from the table above. Unlisted platforms default to `lightgrey`.
+7. Never skip the color segment. `...badge/Platform-Claude%20Code` (no color) → `green` — broken semantics.
+
 ```
 <div align="center">
   <h1>[Project Name]</h1>
-  <p>One-line tagline — what the project does in 5 seconds</p>
+  <p>One-line tagline</p>
 
-  [![License](...)](LICENSE)
-  [![Platform](...)](...)
-  [![Stars](...)](...)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+  [![Platform](https://img.shields.io/badge/Platform-Claude%20Code-blue)](https://code.claude.com)
+  [![Stars](https://img.shields.io/github/stars/owner/repo)](https://github.com/owner/repo)
 </div>
 
 ---
