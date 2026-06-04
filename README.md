@@ -38,11 +38,22 @@ Say "share to GitHub" and this skill handles everything:
 
 ## 🚀 Quick Start
 
+> **What you need:** `git` installed on your computer. If `git --version` works in terminal, you're ready.
+
+**Step 1 — Open terminal**
+- **Windows:** Press `Win + R`, type `powershell`, press Enter
+- **macOS:** Press `Cmd + Space`, type `terminal`, press Enter
+- **Linux:** You already know 😄
+
+**Step 2 — Copy and run this command** (it doesn't matter which folder you're in):
+
 ```bash
 git clone https://github.com/20kiki/github-format-standards.git ~/.claude/skills/github-format-standards
 ```
 
-Done. Claude Code auto-discovers skills in `~/.claude/skills/` — say `/GitHub格式规范` or "Share this to GitHub" to trigger it.
+**Step 3 — Done.** The skill is installed. In Claude Code, say `/GitHub格式规范` or "Share this to GitHub" to trigger it.
+
+> This command downloads the project into Claude Code's skills folder. Run `git pull` in that folder anytime to update.
 
 ## Installation
 

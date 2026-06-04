@@ -38,11 +38,22 @@
 
 ## 🚀 快速开始
 
+> **前置条件：** 电脑上已安装 `git`。在终端输入 `git --version` 能正常输出版本号即可。
+
+**第一步 — 打开终端**
+- **Windows：** 按 `Win + R`，输入 `powershell`，回车
+- **macOS：** 按 `Cmd + 空格`，输入 `terminal`，回车
+- **Linux：** 你懂的 😄
+
+**第二步 — 复制下面这条命令，粘贴到终端里回车**（在哪个目录下执行都可以）：
+
 ```bash
 git clone https://github.com/20kiki/github-format-standards.git ~/.claude/skills/github-format-standards
 ```
 
-就这一步。Claude Code 会自动发现 `~/.claude/skills/` 下的 skill，之后说「/GitHub格式规范」或「把这个分享到 GitHub」即可触发。
+**第三步 — 完成。** skill 已安装。在 Claude Code 中说「/GitHub格式规范」或「把这个分享到 GitHub」即可触发。
+
+> 这条命令会把项目文件下载到 Claude Code 的 skills 文件夹。以后想更新，在 skills 文件夹下执行 `git pull` 即可。
 
 ## 安装
 
