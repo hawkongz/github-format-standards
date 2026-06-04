@@ -5,81 +5,163 @@ description: GitHub 项目格式规范 - 当用户准备将项目分享到 GitHu
 
 # GitHub 格式规范
 
-当用户想把项目分享到 GitHub 时，执行以下完整流水线。**不要只输出规则——直接动手改。**
+当用户想把项目分享到 GitHub 时，运行完整流水线。**直接动手，不要只念规则。**
 
-## 完整流水线
+## 完整流水线（七个阶段）
 
-### 阶段一：审计
+### 阶段一：根目录审查
 
-扫描项目，列出已有 vs 缺失：
+检查项目根目录是否整洁：
+
+- **红线**：大文件（>1MB）、临时文件（`*.tmp`、`*.bak`、`~*`）、编译产物（`dist/`、`build/`、`*.pyc`）、敏感文件（`.env`、`credentials.*`、`*.pem`）、IDE 残留（`.vscode/`、`.idea/`）
+- 发现后：警告用户，加入 `.gitignore`
+- 确保 `.gitignore` 存在且至少覆盖：`node_modules/`、`__pycache__/`、`*.pyc`、`.env`、`.DS_Store`、`dist/`、`build/`、IDE 目录
 
 ```
-已有：README.md ✓  CONTRIBUTING.md ✗  .github/ ✗  SECURITY.md ✗
-问题：3 张表格缺对齐、2 个代码块缺语言标注
+根目录审查：
+  ⚠  node_modules/ 存在 — 已加入 .gitignore
+  ✓  无大文件、无密钥、无编译产物
+  ✓  .gitignore 已创建，含 12 条规则
 ```
 
-### 阶段二：修复现有文件
+### 阶段二：文件命名与目录结构
 
-逐文件检查所有 `.md` 文件，发现问题直接改，不要等用户确认。
+**命名规则**：
+- 全小写 + 连字符（`my-project`）或下划线（`my_project`），同一项目统一
+- 文件名/目录名禁止空格、禁止中文（多语言文档项目除外）
+- 脚本放 `scripts/`、示例放 `examples/`、文档放 `docs/`、测试放 `tests/` 或 `__tests__/`、源码放 `src/` 或 `lib/`
+- 发现问题直接改名/移动
 
-- [ ] 标题：`#` 后空格、不跳级
-- [ ] 代码块：每个 ` ``` ` 都标注语言（` ```python `、` ```bash `）
+**标准结构**：
+```
+project/
+├── src/           # 源码（或 lib/）
+├── tests/         # 测试（或 __tests__/）
+├── docs/          # 文档（可选，也可集中在 README）
+├── scripts/       # 工具脚本
+├── examples/      # 使用示例
+├── README.md
+├── LICENSE
+├── .gitignore
+└── CONTRIBUTING.md
+```
+
+小项目（单文件脚本）保持扁平结构即可，不要过度设计。
+
+### 阶段三：文档检查与修复
+
+逐文件检查所有 `.md`，直接改：
+
+- [ ] 标题：`# 标题` 不是 `#标题`，不跳级（`#` → `##` → `###`）
+- [ ] 代码块：每个 ` ``` ` 都标注语言
 - [ ] 表格：分隔行加 `:---` 对齐标记
-- [ ] 列表：符号统一（`*` 或 `-`）、子列表缩进 2 空格
-- [ ] 链接：无裸 URL、图片有 alt 文本
-- [ ] 中英文空格：`使用 GitHub` 不是 `使用GitHub`
-- [ ] 专有名词：`GitHub` 不是 `github`、`JavaScript` 不是 `Javascript`
+- [ ] 列表：符号统一（`*` 优先），子列表缩进 2 空格
+- [ ] 链接：无裸 URL，图片有 alt 文本
+- [ ] 中英文空格：`使用 GitHub` 不是 `使用GitHub`；`支持 10 个` 不是 `支持10个`
+- [ ] 专有名词：`GitHub` 不是 `github`，`JavaScript` 不是 `Javascript`
 - [ ] 文件末尾：恰好一个空行
+- [ ] 图片路径：相对路径或 CDN，禁止本地绝对路径
 
-### 阶段三：生成缺失文件
+### 阶段四：生成缺失文件
 
-- **`.github/ISSUE_TEMPLATE/`** — bug 报告 + 功能建议模板 + `config.yml`
-- **`.github/PULL_REQUEST_TEMPLATE.md`** — 含改动摘要、测试计划、截图区域
-- **`CONTRIBUTING.md`** — 贡献流程、本地开发、提交规范
-- **`SECURITY.md`** — 安全漏洞报告说明
-- **`.gitignore`** — 如果没有，根据项目语言生成
+- **`LICENSE`**（必选）：用户未指定则默认 MIT
+- **`.gitignore`**（必选）：根据项目语言生成
+- **`CONTRIBUTING.md`**（推荐）：多文件项目都应该有
+- **`SECURITY.md`**（推荐）：安全漏洞报告说明
+- **`.github/ISSUE_TEMPLATE/`**：bug 报告 + 功能建议 + `config.yml`
+- **`.github/PULL_REQUEST_TEMPLATE.md`**：改动摘要、测试计划、截图区域
 
-### 阶段四：README 优化
+### 阶段五：README 重写
 
-按热门项目模式（React / FastAPI / TensorFlow）重写 README：
+按以下结构重写 README。**标题居中、带目录。**
 
 ```
-（可选：居中 Logo）
-# [项目名称]
-（一句话简介，不加 ## 标题）
-（可选：Badges 行）
+<div align="center">
+  <h1>[项目名称]</h1>
+  <p>一句话简介 — 5 秒看懂这个项目是做什么的</p>
 
-（直接描述——先说 WHY，再说 WHAT，不加标题）
+  [![License](...)](LICENSE)
+  [![Platform](...)](...)
+  [![Stars](...)](...)
+</div>
 
-## 功能特性          ← * **关键词：** 描述
-## 快速开始          ← 必须可直接复制粘贴
-## 安装
-## 使用方法
-## API 文档
-## 贡献指南
-## 许可证
+---
+
+## 📋 目录
+- [功能特性](#功能特性)
+- [快速开始](#快速开始)
+- [安装](#安装)
+- [使用方法](#使用方法)
+- [API 文档](#api-文档)
+- [贡献指南](#贡献指南)
+- [许可证](#许可证)
+
+---
+
+（描述段落——先说 WHY，再说 WHAT。不加标题。）
+
+## ✨ 功能特性
+* **功能一：** 说明
+* **功能二：** 说明
+
+## 🚀 快速开始
+```bash
+# 命令必须可直接复制粘贴
 ```
 
-### 阶段五：双语支持（中文项目）
+## 📦 安装
+## 📖 使用方法
+## 🔧 API 文档
+## 🤝 贡献指南
+## 📄 许可证
+```
 
-如果项目是中文或双语的：
+**目录规则**：
+- 从 README 中的 `##` 标题自动生成
+- 使用锚点链接：`[功能特性](#功能特性)`、`[快速开始](#快速开始)`
+- 每个章节可用 emoji 前缀增强可扫描性（用户不喜欢则跳过）
 
-- 根目录：英文 `README.md` + 英文 `SKILL.md`
-- `zh-CN/`：中文 `README.md` + 中文 `SKILL.md`
-- 顶部都有 `**Language:** [English](../README.md) | [简体中文](README.md)`
+### 阶段六：双语设置（中文项目）
 
-### 阶段六：发布
+如果项目是中文的或用户需要双语：
 
-所有文件生成并修复后：
+```
+project/
+├── README.md          # 英文
+├── SKILL.md           # 英文（如适用）
+├── LICENSE
+└── zh-CN/
+    ├── README.md      # 简体中文
+    └── SKILL.md       # 简体中文（如适用）
+```
 
-1. 如果不是 git 仓库，`git init`
-2. `git add` 所有文件（排除密钥、`.env`、大二进制文件）
-3. 用清晰的信息 commit
-4. 如果 GitHub repo 不存在，`gh repo create` 创建
+两份 README 顶部都有 `**Language:** [English](../README.md) | [简体中文](README.md)`。
+
+翻译要自然，不能机翻感。中文版读起来要像母语者写的。
+
+### 阶段七：发布
+
+1. 不是 git 仓库则 `git init`
+2. `git add` 所有文件（排除密钥、`.env`、二进制文件）
+3. 用约定式提交格式 commit：
+
+```
+type(scope): subject
+
+feat(readme): 添加安装指南
+fix: 修复 API 文档表格对齐
+docs: 添加 CONTRIBUTING.md
+```
+
+**提交类型**：`feat`、`fix`、`docs`、`style`、`refactor`、`test`、`chore`
+**主题**：英文 ≤72 字符；中文适当放宽但保持简洁
+
+4. 如果远程仓库不存在，`gh repo create` 创建（公开，描述用 README 的 tagline）
 5. `git push`
-6. 输出最终 GitHub URL
+6. 如果是发布版：打语义化版本标签 `git tag v1.0.0`，推送标签
+7. 输出最终 GitHub URL
 
-如果用户只想本地预览，到阶段五停止，输出改动摘要。
+如果用户只想本地预览，到阶段六结束，输出改动摘要。
 
 ---
 
@@ -87,52 +169,21 @@ description: GitHub 项目格式规范 - 当用户准备将项目分享到 GitHu
 
 完成后输出：
 
-| 阶段 | 内容 |
-| :--- | :--- |
-| 审计 | 发现 3 个问题：... |
-| 修复 | 5 处改动，涉及 2 个文件 |
-| 生成 | 创建 4 个文件：.github/...、CONTRIBUTING.md、... |
-| 优化 | 重写 README 结构 |
-| 发布 | 已推送至 https://github.com/... |
+| 阶段 | 状态 | 详情 |
+| :--- | :--- | :--- |
+| 根目录审查 | ✓ | .gitignore 已创建，node_modules/ 已排除 |
+| 目录结构 | ⚠ | `My Script.sh` → `scripts/my-script.sh` |
+| 文档修复 | 6 处 | 3 张表格对齐、2 个代码块标注语言、1 个链接修复 |
+| 文件生成 | 5 个 | LICENSE、.gitignore、CONTRIBUTING.md、Issue/PR 模板 |
+| README | 重写 | 居中标题、目录、8 个章节 |
+| 双语 | 已创建 | zh-CN/README.md + zh-CN/SKILL.md |
+| 发布 | 已推送 | https://github.com/... |
 
 ---
 
-## README 结构参考
+## 读取 references/ 获取模板
 
-```
-（可选：<div align="center"> 居中 Logo）
-# [项目名称]
-（一句话简介，不加 ## 标题，可居中）
-Badges 行
-
-（描述段落——不加标题，先说 WHY）
-## 功能特性            ← * **关键词：** 描述
-## 演示 / 截图
-## 快速开始             ← 3 分钟跑起来
-## 安装
-## 使用方法
-## 配置
-## API 文档
-## 贡献指南
-## 许可证
-## 致谢
-```
-
-可选：Security、Good First Issues、相关项目。
-
-## 中文专项规则
-
-- 中文 + 英文：`使用 GitHub`（加空格）
-- 中文 + 数字：`支持 10 个`（加空格）
-- 专有名词：`GitHub`、`JavaScript`、`TypeScript`、`Python`、`Node.js`、`React`、`Vue`、`macOS`、`API`、`URL`、`VS Code`、`npm`
-- 中文段落 → 中文标点 `，。：（）`
-- 英文段落 → 英文标点 `,.:()`
-
-## 模板引用
-
-生成文件时读取 `references/` 下的完整模板：
-
-- `references/readme-template.md`
-- `references/issue-template.md`
-- `references/pr-template.md`
-- `references/contributing-template.md`
+- `references/readme-template.md` — 完整 README 模板
+- `references/issue-template.md` — Issue 模板
+- `references/pr-template.md` — PR 模板
+- `references/contributing-template.md` — 贡献指南模板

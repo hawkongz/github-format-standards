@@ -1,80 +1,104 @@
 <div align="center">
   <h1>GitHub Format Standards</h1>
-  <p>A Claude Code skill that automatically formats project docs per GitHub best practices.</p>
+  <p>A Claude Code skill — one command to audit, fix, and ship any project to GitHub.</p>
+
+  [![GitHub stars](https://img.shields.io/github/stars/20kiki/github-format-standards?style=social)](https://github.com/20kiki/github-format-standards/stargazers)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+  [![Platform: Claude Code](https://img.shields.io/badge/Platform-Claude%20Code-orange)](https://claude.ai/code)
 </div>
 
 **Language:** [English](README.md) | [简体中文](zh-CN/README.md)
 
-[![GitHub stars](https://img.shields.io/github/stars/20kiki/github-format-standards?style=social)](https://github.com/20kiki/github-format-standards/stargazers)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Platform: Claude Code](https://img.shields.io/badge/Platform-Claude%20Code-orange)](https://claude.ai/code)
+---
 
-**Inspect first, then correct. Audit item by item, enforce consistency.**
+## 📋 Table of Contents
+- [What It Does](#what-it-does)
+- [Installation](#installation)
+- [Usage](#usage)
+- [The 7-Phase Pipeline](#the-7-phase-pipeline)
+- [File Structure](#file-structure)
+- [License](#license)
 
 ---
 
 ## What It Does
 
-Tired of manually fixing formatting every time you share a project on GitHub? This skill handles it:
+Say "share to GitHub" and this skill handles everything:
 
-* **Markdown standards**: heading hierarchy, code block language tags, table alignment, consistent list indentation
-* **README structure**: reorganize per patterns from React / FastAPI / TensorFlow and other top projects
-* **Template generation**: Issue templates, PR templates, CONTRIBUTING.md, SECURITY.md
-* **Chinese-specific rules**: spacing between Chinese/English, proper noun capitalization, punctuation matching
+| Phase | What Happens |
+| :--- | :--- |
+| 1. Root Audit | Scans for large files, secrets, build artifacts; generates `.gitignore` |
+| 2. Structure | Fixes file names (lowercase, no spaces), moves files into `src/` `tests/` etc. |
+| 3. Doc Fixes | Aligns tables, tags code blocks, fixes Chinese/English spacing, corrects proper nouns |
+| 4. Generate | Creates `LICENSE`, `CONTRIBUTING.md`, `SECURITY.md`, Issue/PR templates |
+| 5. README | Rewrites README with centered title, TOC, and top-project structure |
+| 6. Bilingual | Sets up `zh-CN/` with full Chinese translation if needed |
+| 7. Ship | `git init` → commit (conventional format) → `gh repo create` → push → tag |
 
 ## Installation
 
 ```bash
-# Clone into Claude Code skills directory
 git clone https://github.com/20kiki/github-format-standards.git \
   ~/.claude/skills/github-format-standards
 ```
-
-Or place `SKILL.md` in any directory recognized by Claude Code as a skill.
 
 ## Usage
 
 In Claude Code:
 
-- `/GitHub格式规范` — direct invocation
-- "Check my formatting" — auto-trigger
-- "Polish the README before publishing to GitHub" — auto-trigger
-- "Create Issue and PR templates" — auto-trigger
-
-## Workflow
-
-1. Scan all `.md` files and `.github/` directory
-2. Check each file against the rules, fix issues immediately
-3. Output a change summary with the reason for each fix
-
-## Rules Covered
-
-| Category | Details |
+| You say | Triggers |
 | :--- | :--- |
-| Markdown basics | No heading level skipping, language-tagged code blocks, aligned tables, described links, alt text on images, consistent list indentation |
-| README structure | Title+tagline→Badges→Description→Features→Quick Start→Install→API→Config→Contributing→License |
-| Community files | ISSUE_TEMPLATE, PULL_REQUEST_TEMPLATE, CONTRIBUTING.md, SECURITY.md |
-| Chinese specifics | Spacing between Chinese/English, proper noun capitalization, Chinese punctuation for Chinese paragraphs |
+| `/GitHub格式规范` | Direct invocation |
+| "Share this to GitHub" | Full pipeline |
+| "Check my formatting" | Audit + fix only |
+| "Create Issue and PR templates" | Generate only |
 
-## Rules Derived From Real Projects
+## The 7-Phase Pipeline
 
-Formatting rules are based on analysis of actual top repositories:
+### 1. Root Directory Audit
+- Red-flags large files, temp files, build artifacts, `.env`, IDE cruft
+- Generates `.gitignore` with language-appropriate rules
 
-* **List marker `*`**: used by React, TensorFlow, FastAPI
-* **Feature list style**: `* **Keyword:** description` pattern from React
-* **Centered title + badges**: from FastAPI / Next.js / TensorFlow
-* **`<details>` collapsible sections**: from FastAPI docs
-* **Project structure tree**: from most mature projects
+### 2. File Naming & Structure
+- Enforces lowercase-with-hyphens naming
+- Moves files into `src/`, `tests/`, `scripts/`, `examples/`, `docs/`
+
+### 3. Document Fixes
+- Heading hierarchy, code block language tags, table alignment
+- Chinese/English spacing, proper noun capitalization
+- Image paths (relative or CDN only)
+
+### 4. Generate Missing Files
+- `LICENSE` (MIT by default), `.gitignore`, `CONTRIBUTING.md`, `SECURITY.md`
+- `.github/ISSUE_TEMPLATE/` + `.github/PULL_REQUEST_TEMPLATE.md`
+
+### 5. README Rewrite
+- Centered title + badges, auto-generated TOC
+- Structure: Features → Quick Start → Install → Usage → API → Contributing → License
+
+### 6. Bilingual Setup
+- Root: English, `zh-CN/`: Chinese
+- Natural translation, not machine translation
+
+### 7. Ship
+- Conventional commits (`feat:`, `fix:`, `docs:`)
+- Semantic versioning tags (`v1.0.0`)
+- Creates GitHub repo, pushes, outputs URL
 
 ## File Structure
 
 ```
-├── SKILL.md                              # Skill main file (English)
+├── SKILL.md                              # Skill (English)
 ├── README.md                             # This file (English)
 ├── LICENSE                               # MIT
+├── references/
+│   ├── readme-template.md
+│   ├── issue-template.md
+│   ├── pr-template.md
+│   └── contributing-template.md
 └── zh-CN/
-    ├── README.md                         # 中文说明
-    └── SKILL.md                          # 中文 Skill 文件
+    ├── README.md                         # 简体中文
+    └── SKILL.md                          # 简体中文 Skill
 ```
 
 ## License
