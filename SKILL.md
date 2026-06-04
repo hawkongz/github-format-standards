@@ -109,6 +109,8 @@ Every badge uses an explicit shields.io color. If the project has no standard co
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
   [![Platform](https://img.shields.io/badge/Platform-Claude%20Code-blue)](https://code.claude.com)
   [![Stars](https://img.shields.io/github/stars/owner/repo)](https://github.com/owner/repo)
+
+  <p><strong>Language:</strong> <a href="README.md">English</a> | <a href="zh-CN/README.md">简体中文</a></p>
 </div>
 
 ---
@@ -205,7 +207,10 @@ project/
     └── SKILL.md       # 简体中文 (if applicable)
 ```
 
-Both README files get `**Language:** [English](../README.md) | [简体中文](README.md)` at the top.
+Both README files get a language switcher line inside the centered header `<div>`, right below the badges:
+
+- Root `README.md` → `<a href="README.md">English</a> | <a href="zh-CN/README.md">简体中文</a>`
+- `zh-CN/README.md` → `<a href="../README.md">English</a> | <a href="README.md">简体中文</a>`
 
 Translate content, don't just copy — the Chinese version should read naturally, not like machine translation.
 
