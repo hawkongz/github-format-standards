@@ -42,6 +42,8 @@ Say "share to GitHub" and this skill handles everything:
 git clone https://github.com/20kiki/github-format-standards.git ~/.claude/skills/github-format-standards
 ```
 
+Done. Claude Code auto-discovers skills in `~/.claude/skills/` — say `/GitHub格式规范` or "Share this to GitHub" to trigger it.
+
 ## Installation
 
 ```bash

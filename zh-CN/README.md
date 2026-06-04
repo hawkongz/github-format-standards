@@ -42,6 +42,8 @@
 git clone https://github.com/20kiki/github-format-standards.git ~/.claude/skills/github-format-standards
 ```
 
+就这一步。Claude Code 会自动发现 `~/.claude/skills/` 下的 skill，之后说「/GitHub格式规范」或「把这个分享到 GitHub」即可触发。
+
 ## 安装
 
 ```bash
