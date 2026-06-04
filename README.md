@@ -5,9 +5,9 @@
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
   [![Platform](https://img.shields.io/badge/Platform-Claude%20Code-blue)](https://code.claude.com)
   [![Stars](https://img.shields.io/github/stars/20kiki/github-format-standards)](https://github.com/20kiki/github-format-standards)
-</div>
 
-**Language:** [English](README.md) | [简体中文](zh-CN/README.md)
+  <p><strong>Language:</strong> <a href="README.md">English</a> | <a href="zh-CN/README.md">简体中文</a></p>
+</div>
 
 ---
 

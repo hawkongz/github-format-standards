@@ -5,9 +5,9 @@
   <a href="https://github.com/20kiki/github-format-standards/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/20kiki/github-format-standards?style=social"></a>
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-blue.svg"></a>
   <a href="https://claude.ai/code"><img alt="Platform: Claude Code" src="https://img.shields.io/badge/Platform-Claude%20Code-orange"></a>
-</div>
 
-**Language:** [English](../README.md) | [简体中文](README.md)
+  <p><strong>Language:</strong> <a href="../README.md">English</a> | <a href="README.md">简体中文</a></p>
+</div>
 
 ---
 
