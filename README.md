@@ -13,7 +13,7 @@
 
 ## 📋 Table of Contents
 - [What It Does](#what-it-does)
-- [Quick Start](#quick-start)
+- [Quick Start](#-quick-start)
 - [Installation](#installation)
 - [Usage](#usage)
 - [The 7-Phase Pipeline](#the-7-phase-pipeline)
