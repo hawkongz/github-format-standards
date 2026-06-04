@@ -1,82 +1,82 @@
-# GitHub 格式规范 Skill
+<div align="center">
+  <h1>GitHub Format Standards</h1>
+  <p>A Claude Code skill that automatically formats project docs per GitHub best practices.</p>
+</div>
 
-**Language:** [简体中文](README.md)
+**Language:** [English](README.md) | [简体中文](zh-CN/README.md)
 
 [![GitHub stars](https://img.shields.io/github/stars/20kiki/github-format-standards?style=social)](https://github.com/20kiki/github-format-standards/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Platform: Claude Code](https://img.shields.io/badge/Platform-Claude%20Code-orange)](https://claude.ai/code)
 
-一个 Claude Code skill，自动按照 GitHub 最佳实践检查和修正项目文档格式。
-
-**先分类，再检查。逐项审计，统一规范。**
+**Inspect first, then correct. Audit item by item, enforce consistency.**
 
 ---
 
-## 它能做什么
+## What It Does
 
-每次做好项目准备分享到 GitHub，都要手动调整格式？用这个 skill 一次性搞定：
+Tired of manually fixing formatting every time you share a project on GitHub? This skill handles it:
 
-* **Markdown 规范检查**：标题层级、代码块语言标注、表格对齐、列表缩进统一
-* **README 结构优化**：按照 React / FastAPI / TensorFlow 等热门项目的通用模式重组
-* **模板文件生成**：Issue 模板、PR 模板、CONTRIBUTING.md、SECURITY.md
-* **中文项目专项**：中英文空格、专有名词大小写、标点符号匹配
+* **Markdown standards**: heading hierarchy, code block language tags, table alignment, consistent list indentation
+* **README structure**: reorganize per patterns from React / FastAPI / TensorFlow and other top projects
+* **Template generation**: Issue templates, PR templates, CONTRIBUTING.md, SECURITY.md
+* **Chinese-specific rules**: spacing between Chinese/English, proper noun capitalization, punctuation matching
 
-## 安装
+## Installation
 
 ```bash
-# 克隆到 Claude Code skills 目录
+# Clone into Claude Code skills directory
 git clone https://github.com/20kiki/github-format-standards.git \
   ~/.claude/skills/github-format-standards
 ```
 
-或者直接把 `SKILL.md` 放到任何 Claude Code 能识别为 skill 的目录。
+Or place `SKILL.md` in any directory recognized by Claude Code as a skill.
 
-## 使用
+## Usage
 
-在 Claude Code 中说：
+In Claude Code:
 
-- `/GitHub格式规范` — 直接调用
-- 「帮我看下格式」— 自动触发
-- 「整理下 README，准备发 GitHub」— 自动触发
-- 「创建 Issue 和 PR 模板」— 自动触发
+- `/GitHub格式规范` — direct invocation
+- "Check my formatting" — auto-trigger
+- "Polish the README before publishing to GitHub" — auto-trigger
+- "Create Issue and PR templates" — auto-trigger
 
-## 工作流程
+## Workflow
 
-1. 扫描项目中所有 `.md` 文件和 `.github/` 目录
-2. 逐文件检查，发现问题直接修正
-3. 输出改动摘要，列出每处修改及原因
+1. Scan all `.md` files and `.github/` directory
+2. Check each file against the rules, fix issues immediately
+3. Output a change summary with the reason for each fix
 
-## 规范覆盖
+## Rules Covered
 
-| 类别 | 内容 |
+| Category | Details |
 | :--- | :--- |
-| Markdown 基础 | 标题层级不跳级、代码块标注语言、表格对齐、链接有描述、图片有 alt、列表缩进统一 |
-| README 结构 | 标题+简介→Badges→描述→功能特性→快速开始→安装→API→配置→贡献→许可证 |
-| 社区文件 | ISSUE_TEMPLATE、PULL_REQUEST_TEMPLATE、CONTRIBUTING.md、SECURITY.md |
-| 中文专项 | 中英文间空格、专有名词大小写、中文标点对应中文段落 |
+| Markdown basics | No heading level skipping, language-tagged code blocks, aligned tables, described links, alt text on images, consistent list indentation |
+| README structure | Title+tagline→Badges→Description→Features→Quick Start→Install→API→Config→Contributing→License |
+| Community files | ISSUE_TEMPLATE, PULL_REQUEST_TEMPLATE, CONTRIBUTING.md, SECURITY.md |
+| Chinese specifics | Spacing between Chinese/English, proper noun capitalization, Chinese punctuation for Chinese paragraphs |
 
-## 规范来源
+## Rules Derived From Real Projects
 
-格式规则基于对热门项目的实际分析：
+Formatting rules are based on analysis of actual top repositories:
 
-* **列表符号 `*`**：React、TensorFlow、FastAPI 均使用 `*`
-* **功能特性格式**：`* **关键词：** 说明` 模式来自 React
-* **标题 + Badges 居中**：来自 FastAPI / Next.js / TensorFlow
-* **`<details>` 折叠**：来自 FastAPI 的长文档
-* **项目结构树**：来自大多数成熟项目
+* **List marker `*`**: used by React, TensorFlow, FastAPI
+* **Feature list style**: `* **Keyword:** description` pattern from React
+* **Centered title + badges**: from FastAPI / Next.js / TensorFlow
+* **`<details>` collapsible sections**: from FastAPI docs
+* **Project structure tree**: from most mature projects
 
-## 文件结构
+## File Structure
 
 ```
-├── SKILL.md                              # Skill 主文件
-├── README.md                             # 本文件
-└── references/
-    ├── readme-template.md                # README 完整模板
-    ├── issue-template.md                 # Issue 模板
-    ├── pr-template.md                    # Pull Request 模板
-    └── contributing-template.md          # 贡献指南模板
+├── SKILL.md                              # Skill main file (English)
+├── README.md                             # This file (English)
+├── LICENSE                               # MIT
+└── zh-CN/
+    ├── README.md                         # 中文说明
+    └── SKILL.md                          # 中文 Skill 文件
 ```
 
-## 许可证
+## License
 
 MIT
