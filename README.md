@@ -2,9 +2,9 @@
   <h1>GitHub Format Standards</h1>
   <p>A Claude Code skill — one command to audit, fix, and ship any project to GitHub.</p>
 
-  <a href="https://github.com/20kiki/github-format-standards/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/20kiki/github-format-standards?style=social"></a>
-  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-blue.svg"></a>
-  <a href="https://claude.ai/code"><img alt="Platform: Claude Code" src="https://img.shields.io/badge/Platform-Claude%20Code-orange"></a>
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+  [![Platform](https://img.shields.io/badge/Platform-Claude%20Code-blue)](https://code.claude.com)
+  [![Stars](https://img.shields.io/github/stars/20kiki/github-format-standards)](https://github.com/20kiki/github-format-standards)
 </div>
 
 **Language:** [English](README.md) | [简体中文](zh-CN/README.md)
