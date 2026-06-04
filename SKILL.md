@@ -182,7 +182,10 @@ Windows (PowerShell):
 - Use anchor links: `[Features](#features)`, `[Quick Start](#quick-start)`
 - **Critical — emoji in headings breaks anchors:** GitHub strips emoji from heading IDs and prepends `-`. `## 🔍 The Problem` → `#-the-problem` (NOT `#the-problem`). Always verify TOC anchors match actual heading IDs.
 - **No dead TOC links:** Every TOC entry must have a corresponding `##` heading in the document. Remove any TOC entry that lacks its target heading.
+- **Every `##` heading emoji must be unique across the document.** No two sections may share the same emoji — duplicate emojis cause anchor ambiguity and degrade visual scanning. Audit all headings before finalizing.
+- **Emoji set reference (pick from these, no repeats):** `📋` commands/list, `⌨️` keyboard/shortcuts, `💬` conversation/chat, `🔧` config/setup, `🚀` quickstart/workflow, `📦` installation/packaging, `🧠` strategy/thinking, `📚` resources, `✨` features, `📌` topics/tags, `🤝` contributing, `📄` license, `🔍` problem/investigation, `📖` usage/guide
 - Emoji prefix per section for visual scanning (optional, skip if the user dislikes emojis)
+- **After writing README, verify at least 2 random TOC links:** use WebFetch on the raw GitHub README to confirm the rendered heading IDs match the TOC anchors
 
 ### Phase 6: Bilingual Setup (Chinese projects)
 
