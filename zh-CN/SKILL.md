@@ -149,7 +149,7 @@ project/
 
 1. 不是 git 仓库则 `git init`
 2. `git add` 所有文件（排除密钥、`.env`、二进制文件）
-3. 用约定式提交格式 commit。**提交作者是用户本人**（使用 `git config user.name` / `user.email` 的配置）。询问用户是否需要在提交信息末尾加上 `Co-Authored-By: Claude <noreply@anthropic.com>`，只有用户同意才添加。
+3. 用约定式提交格式 commit。**提交作者是用户本人**（使用 `git config user.name` / `user.email` 的配置）。提交前确认用户的 git 邮箱已在 GitHub 账号中验证——否则提交不会关联到 GitHub 头像。如果不确定，建议使用 `username@users.noreply.github.com`。询问用户是否需要在提交信息末尾加上 `Co-Authored-By: Claude <noreply@anthropic.com>`，只有用户同意才添加。
 
 ```
 type(scope): subject
