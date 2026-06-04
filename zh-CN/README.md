@@ -2,9 +2,9 @@
   <h1>GitHub 格式规范</h1>
   <p>一个 Claude Code skill — 一行命令，审计、修正、发布任何项目到 GitHub。</p>
 
-  <a href="https://github.com/hawkongz/github-format-standards/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/hawkongz/github-format-standards?style=social"></a>
-  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-blue.svg"></a>
-  <a href="https://claude.ai/code"><img alt="Platform: Claude Code" src="https://img.shields.io/badge/Platform-Claude%20Code-orange"></a>
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+  [![Platform](https://img.shields.io/badge/Platform-Claude%20Code-blue)](https://code.claude.com)
+  [![Stars](https://img.shields.io/github/stars/hawkongz/github-format-standards)](https://github.com/hawkongz/github-format-standards)
 
   <p><strong>Language:</strong> <a href="../README.md">English</a> | <a href="README.md">简体中文</a></p>
 </div>
