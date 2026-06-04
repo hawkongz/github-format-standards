@@ -1,11 +1,16 @@
 # GitHub 格式规范 Skill
 
+**Language:** [简体中文](README.md)
+
+[![GitHub stars](https://img.shields.io/github/stars/20kiki/github-format-standards?style=social)](https://github.com/20kiki/github-format-standards/stargazers)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Platform: Claude Code](https://img.shields.io/badge/Platform-Claude%20Code-orange)](https://claude.ai/code)
+
 一个 Claude Code skill，自动按照 GitHub 最佳实践检查和修正项目文档格式。
 
 **先分类，再检查。逐项审计，统一规范。**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Platform: Claude Code](https://img.shields.io/badge/Platform-Claude%20Code-orange)](https://claude.ai/code)
+---
 
 ## 它能做什么
 
