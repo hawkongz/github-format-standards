@@ -13,6 +13,7 @@
 
 ## 📋 Table of Contents
 - [What It Does](#what-it-does)
+- [Quick Start](#quick-start)
 - [Installation](#installation)
 - [Usage](#usage)
 - [The 7-Phase Pipeline](#the-7-phase-pipeline)
@@ -34,6 +35,12 @@ Say "share to GitHub" and this skill handles everything:
 | 5. README | Rewrites README with centered title, TOC, and top-project structure |
 | 6. Bilingual | Sets up `zh-CN/` with full Chinese translation if needed |
 | 7. Ship | `git init` → conventional commit → `gh repo create` → push → semantic tag |
+
+## 🚀 Quick Start
+
+```bash
+git clone https://github.com/20kiki/github-format-standards.git ~/.claude/skills/github-format-standards
+```
 
 ## Installation
 

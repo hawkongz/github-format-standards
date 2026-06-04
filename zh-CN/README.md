@@ -13,6 +13,7 @@
 
 ## 📋 目录
 - [它能做什么](#它能做什么)
+- [快速开始](#快速开始)
 - [安装](#安装)
 - [使用](#使用)
 - [七阶段流水线](#七阶段流水线)
@@ -34,6 +35,12 @@
 | 5. README | 重写 README：居中标题、自动目录、热门项目结构 |
 | 6. 双语 | 需要时创建 `zh-CN/`，完整中文翻译 |
 | 7. 发布 | `git init` → 约定式提交 → `gh repo create` → push → 语义化标签 |
+
+## 🚀 快速开始
+
+```bash
+git clone https://github.com/20kiki/github-format-standards.git ~/.claude/skills/github-format-standards
+```
 
 ## 安装
 
