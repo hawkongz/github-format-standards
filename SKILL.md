@@ -1,6 +1,6 @@
 ---
 name: github-format-standards
-description: "Use when the user wants to share a project to GitHub. Runs a full pipeline: root audit, file naming and structure, document fixes, generate missing files (LICENSE, .gitignore, CONTRIBUTING.md, Issue/PR templates), README rewrite (centered title, TOC), bilingual setup, git init, conventional commit, gh repo create, push, semantic tag. Triggers on 'share to GitHub' or '/GitHub格式规范'."
+description: "Use when the user wants to share a project to GitHub. Runs a full pipeline: root audit, file naming and structure, document fixes (headings, code-block language tags, table alignment, explicit command interpreters), generate missing files (LICENSE, .gitignore, CONTRIBUTING.md, Issue/PR templates), README rewrite (centered title, TOC), bilingual setup, git init, conventional commit, gh repo create, push, semantic tag. Triggers on 'share to GitHub' or '/GitHub格式规范'."
 ---
 
 # GitHub Format Standards
